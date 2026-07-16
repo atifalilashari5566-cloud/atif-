@@ -90,3 +90,99 @@ function createFlower(){
 }
 
 setInterval(createFlower,650);
+// ======================
+// START BUTTON
+// ======================
+
+startBtn.addEventListener("click", () => {
+
+    music.play().catch(() => {});
+
+    nextPage();
+
+});
+
+// ======================
+// PAGE SYSTEM
+// ======================
+
+function nextPage(){
+
+    currentPage++;
+
+    if(currentPage >= pages.length){
+
+        currentPage = pages.length - 1;
+
+        return;
+
+    }
+
+    showPage(currentPage);
+
+}
+
+setInterval(()=>{
+
+    if(currentPage < pages.length-1){
+
+        nextPage();
+
+    }
+
+},7000);
+
+// ======================
+// TYPEWRITER LETTER
+// ======================
+
+const typing=document.getElementById("typing");
+
+const message=`Dear Atif ❤️
+
+Happy Birthday!
+
+May Allah bless you with happiness,
+success,
+good health,
+and endless smiles.
+
+May every dream of yours come true.
+
+Have a wonderful birthday! 🎂✨`;
+
+let i=0;
+
+function typeWriter(){
+
+    if(!typing) return;
+
+    if(i<message.length){
+
+        typing.innerHTML+=message.charAt(i);
+
+        i++;
+
+        setTimeout(typeWriter,45);
+
+    }
+
+}
+
+setTimeout(typeWriter,15000);
+
+// ======================
+// GIFT
+// ======================
+
+const gift=document.getElementById("gift");
+
+if(gift){
+
+gift.addEventListener("click",()=>{
+
+    alert("🎉 Happy Birthday Atif ❤️🎂");
+
+});
+
+}
