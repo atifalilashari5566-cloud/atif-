@@ -1,177 +1,127 @@
+/* ===================================
+   HAPPY BIRTHDAY ATIF ❤️
+   PREMIUM STYLE
+=================================== */
+
 *{
-margin:0;
-padding:0;
-box-sizing:border-box;
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
 }
 
 html,body{
-width:100%;
-height:100%;
-font-family:'Poppins',sans-serif;
-overflow:hidden;
-background:#020817;
-color:#fff;
+    width:100%;
+    height:100%;
+    overflow:hidden;
+    font-family:'Poppins',sans-serif;
+    background:#020817;
 }
 
 body{
-background:
-linear-gradient(180deg,#020817 0%,#081b3a 50%,#0d2b5e 100%);
-display:flex;
-justify-content:center;
-align-items:center;
+    background:linear-gradient(180deg,#020817,#071a3d,#0c2b63);
+    color:#fff;
 }
 
-/* Background Layers */
+/* Background */
 
 #stars,
 #hearts,
-#flowers{
-position:fixed;
-top:0;
-left:0;
-width:100%;
-height:100%;
-pointer-events:none;
-overflow:hidden;
+#flowers,
+#fireworks{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    pointer-events:none;
 }
 
-/* Main */
+/* Moon */
 
-#home{
-position:relative;
-z-index:5;
+#moon{
+    position:fixed;
+    top:60px;
+    right:80px;
+    width:120px;
+    height:120px;
+    border-radius:50%;
+    background:white;
+    box-shadow:
+        0 0 40px white,
+        0 0 80px #7ec8ff;
 }
+
+/* Pages */
+
+.page{
+    position:absolute;
+    width:100%;
+    height:100%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    opacity:0;
+    visibility:hidden;
+    transition:1s;
+}
+
+.page.active{
+    opacity:1;
+    visibility:visible;
+}
+
+/* Glass Card */
 
 .glass{
-background:rgba(255,255,255,.08);
-backdrop-filter:blur(18px);
-border:1px solid rgba(255,255,255,.15);
-padding:45px;
-border-radius:25px;
-width:90%;
-max-width:700px;
-text-align:center;
-box-shadow:0 0 40px rgba(0,150,255,.2);
+    width:90%;
+    max-width:760px;
+    padding:45px;
+    border-radius:25px;
+    text-align:center;
+
+    background:rgba(255,255,255,.08);
+
+    backdrop-filter:blur(18px);
+
+    border:1px solid rgba(255,255,255,.18);
+
+    box-shadow:0 0 35px rgba(255,255,255,.12);
 }
 
 h1{
-font-size:54px;
-margin-bottom:15px;
-text-shadow:0 0 15px #4fc3ff;
+    font-size:55px;
+    margin-bottom:20px;
 }
 
 h2{
-font-size:30px;
-margin-bottom:20px;
-color:#ffd54f;
+    font-size:32px;
+    color:#FFD54F;
+    margin-bottom:20px;
 }
 
-p{
-font-size:20px;
-line-height:1.8;
-margin-bottom:30px;
+.date{
+    font-size:28px;
+    color:#8fd3ff;
+    margin-bottom:25px;
+}
+
+.subtitle{
+    font-size:20px;
+    line-height:1.8;
 }
 
 button{
-padding:16px 40px;
-font-size:20px;
-border:none;
-border-radius:40px;
-cursor:pointer;
-background:linear-gradient(45deg,#00c6ff,#0072ff);
-color:white;
-transition:.3s;
+    margin-top:35px;
+    padding:16px 42px;
+    border:none;
+    border-radius:40px;
+    background:#1E88E5;
+    color:white;
+    font-size:20px;
+    cursor:pointer;
+    transition:.35s;
 }
 
 button:hover{
-transform:scale(1.08);
-}/* ===== Loading Screen ===== */
-
-#loading{
-position:fixed;
-top:0;
-left:0;
-width:100%;
-height:100%;
-display:flex;
-flex-direction:column;
-justify-content:center;
-align-items:center;
-background:#020817;
-z-index:9999;
-transition:1s;
-}
-
-#loading h1{
-font-size:55px;
-color:white;
-}
-
-#loading p{
-font-size:22px;
-color:#ffd54f;
-}
-
-/* ===== Stars ===== */
-
-.star{
-position:absolute;
-width:3px;
-height:3px;
-background:white;
-border-radius:50%;
-animation:twinkle 2s infinite;
-}
-
-/* ===== Hearts ===== */
-
-.heart{
-position:absolute;
-bottom:-50px;
-font-size:24px;
-animation:floatHeart linear forwards;
-}
-
-/* ===== Roses ===== */
-
-.flower{
-position:absolute;
-top:-50px;
-font-size:28px;
-animation:fallFlower linear forwards;
-}
-
-/* ===== Animations ===== */
-
-@keyframes twinkle{
-0%,100%{
-opacity:.3;
-transform:scale(1);
-}
-50%{
-opacity:1;
-transform:scale(2);
-}
-}
-
-@keyframes floatHeart{
-0%{
-transform:translateY(0);
-opacity:1;
-}
-100%{
-transform:translateY(-120vh);
-opacity:0;
-}
-}
-
-@keyframes fallFlower{
-0%{
-transform:translateY(0) rotate(0deg);
-opacity:1;
-}
-100%{
-transform:translateY(120vh) rotate(360deg);
-opacity:0;
-}
+    transform:scale(1.08);
 }
